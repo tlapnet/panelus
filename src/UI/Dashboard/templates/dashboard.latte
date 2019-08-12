@@ -1,0 +1,23 @@
+{var $sections => $layout->getSections()}
+
+{foreach $sections as $section}
+	<div class="row">
+		{foreach $section->getPanels() as $panel}
+			{var $render => $panel->getRender()}
+			{var $extra => $panel->getExtra()}
+
+			{* Panel is disabled *}
+			{continueIf $extra->has('enabled') && !$extra['enabled']}
+
+			<div {if $render->has('display')}style="display: {$render['display']}"{/if}
+				class="col
+						{if $render->has('width')} col-{$render['width']}{/if}
+						{if $render->has('offset')} offset-{$render['offset']}{/if}
+				">
+				<div class="card border-0">
+					{control $panel->getId()}
+				</div>
+			</div>
+		{/foreach}
+	</div>
+{/foreach}

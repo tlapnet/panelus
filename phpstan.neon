@@ -1,0 +1,8 @@
+parameters:
+	ignoreErrors:
+		# Seems like phpstan don't understand phpdoc defined at offset* methods
+		- message: '#^Method .+\:\:offset.+\(\) has parameter .+ with no typehint specified\.$#'
+		  path: %currentWorkingDirectory%/src/Layout/Entity/Rawprint.php
+
+		# Won't fix
+		- '#^PHPDoc tag \@param for parameter \$extra with type array\<array\> is not subtype of native type array\<int, array\>\.$#'
