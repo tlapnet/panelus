@@ -18,7 +18,7 @@ abstract class AbstractPanelControl extends Control
 	protected $panel;
 
 	/** @var mixed */
-	protected $configuration;
+	protected $config;
 
 	/** @var Bag */
 	protected $bag;
@@ -31,9 +31,9 @@ abstract class AbstractPanelControl extends Control
 	/**
 	 * @return mixed
 	 */
-	public function getConfiguration()
+	public function getConfig()
 	{
-		return $this->configuration;
+		return $this->config;
 	}
 
 	public function getBag(): Bag
@@ -54,7 +54,7 @@ abstract class AbstractPanelControl extends Control
 	public function initialize(Panel $panel, Bag $bag): void
 	{
 		$this->panel = $panel;
-		$this->configuration = $panel->getConfig();
+		$this->config = $panel->getConfig();
 		$this->bag = $bag;
 	}
 
