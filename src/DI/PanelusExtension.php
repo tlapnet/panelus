@@ -3,7 +3,6 @@
 namespace Tlapnet\Panelus\DI;
 
 use Nette\DI\CompilerExtension;
-use Nette\DI\Statement;
 use Nette\Schema\Expect;
 use Nette\Schema\Schema;
 use stdClass;
@@ -49,8 +48,11 @@ final class PanelusExtension extends CompilerExtension
 		$builder->addDefinition($this->prefix('layout.manager'))
 			->setFactory(LayoutManager::class);
 
+		$builder->addDefinition($this->prefix('rawprint'))
+			->setFactory(Rawprint::class, [$config->layouts]);
+
 		$builder->addDefinition($this->prefix('layout.container'))
-			->setFactory(RawContainer::class, [new Statement(Rawprint::class, [$config->layouts])]);
+			->setFactory(RawContainer::class);
 
 		$builder->addDefinition($this->prefix('dashboard.factory'))
 			->setFactory(DashboardFactory::class);
