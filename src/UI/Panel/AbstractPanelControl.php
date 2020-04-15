@@ -17,8 +17,8 @@ abstract class AbstractPanelControl extends Control
 	/** @var Panel */
 	protected $panel;
 
-	/** @var mixed[] */
-	protected $configuration = [];
+	/** @var mixed */
+	protected $configuration;
 
 	/** @var Bag */
 	protected $bag;
@@ -29,9 +29,9 @@ abstract class AbstractPanelControl extends Control
 	}
 
 	/**
-	 * @return mixed[]
+	 * @return mixed
 	 */
-	public function getConfiguration(): array
+	public function getConfiguration()
 	{
 		return $this->configuration;
 	}
