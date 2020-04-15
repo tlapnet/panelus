@@ -31,7 +31,7 @@ final class Dumper
 					if (($panelRender = $panel->getRender()->getAll()) !== []) {
 						$panels[$panel->getId()]['render'] = $panelRender;
 					}
-					if (($panelConfig = $panel->getConfig()) !== []) {
+					if (($panelConfig = $panel->getConfig()) !== null) {
 						$panels[$panel->getId()]['config'] = $panelConfig;
 					}
 				}

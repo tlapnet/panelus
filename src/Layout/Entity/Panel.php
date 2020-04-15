@@ -19,8 +19,8 @@ class Panel
 	/** @var Extra */
 	protected $extra;
 
-	/** @var mixed[] */
-	protected $config = [];
+	/** @var mixed */
+	protected $config;
 
 	public function __construct(string $id)
 	{
@@ -51,17 +51,17 @@ class Panel
 	}
 
 	/**
-	 * @return mixed[]
+	 * @return mixed
 	 */
-	public function getConfig(): array
+	public function getConfig()
 	{
 		return $this->config;
 	}
 
 	/**
-	 * @param mixed[] $config
+	 * @param mixed $config
 	 */
-	public function setConfig(array $config): void
+	public function setConfig($config): void
 	{
 		$this->config = $config;
 	}
